@@ -26,7 +26,7 @@ let vicepresidenciaSchema = mongoose.Schema({
 // 				 required : true }
 // })
 
-let Vicepresidencia = mongoose.model( 'registros', vicepresidenciaSchema );
+let Vicepresidencia = mongoose.model( 'encuestas', vicepresidenciaSchema );
 // let User = mongoose.model( 'User', userSchema );
 
 // let UserList = {

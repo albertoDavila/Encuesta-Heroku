@@ -6,16 +6,10 @@ mongoose.Promise = global.Promise;
 
 let vicepresidenciaSchema = mongoose.Schema({
 	nombre: { type : String },
-	pregunta1: { type : String },
-	pregunta2: { type: String },
-	pregunta3: { type: String },
-	pregunta4: { type: String },
-	pregunta5: { type: String },
-	promedio: { type: Number },
-	podcast: { type: String },
-	audiolibro: { type: String },
-	libro: { type: String }
-
+	satisfaccion: { type : Number },
+	lealtad: { type: String },
+	experienica: { type: String }
+	
 });
 
 // let userSchema = mongoose.Schema({
@@ -84,7 +78,30 @@ let VPList = {
 				.catch( error => {
 					throw Error( error );
 				});
-	}
+	}, 
+		 postSatisfaccion : function( id, tiempoInicio ){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
+			if (err) {
+				throw Error(error);
+			}
+		 });
+	 },
+
+	 postLealtad : function( id, tiempoInicio ){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {lealtad: lealtad}, (err) => {
+			if (err) {
+				throw Error(error);
+			}
+		 });
+	 },
+
+	 postExperiencia : function( id, tiempoInicio ){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {experienica: experienica}, (err) => {
+			if (err) {
+				throw Error(error);
+			}
+		 });
+	 }
 	// ,
 	// post : function( newPet ){
 	// 	return Pet.create( newPet )

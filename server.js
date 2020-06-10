@@ -104,6 +104,70 @@ app.get( "/api/EncuestasE", ( req, res, next ) => {
 // 		});
 // });
 
+app.post("/api/EncuestaA", jsonParser, (req, res, next) =>{
+	let satisfaccion = req.body.satisfaccion;
+	let id = req.body.id;
+
+	VPList.postSatisfaccion(id, satisfaccion)
+	.then( persona =>{
+		return res.status( 201 ).json({
+			message: "Se cambio el valor",
+			status: 201,
+			Persona: persona
+		});
+	})
+	.catch( error => {
+		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		return res.status( 500 ).json({
+			 status : 500,
+			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
+		 });
+	});
+});
+
+app.post("/api/EncuestaB", jsonParser, (req, res, next) =>{
+	let lealtad = req.body.lealtad;
+	let id = req.body.id;
+
+	VPList.postLealtad(id, lealtad)
+	.then( persona =>{
+		return res.status( 201 ).json({
+			message: "Se cambio el valor",
+			status: 201,
+			Persona: persona
+		});
+	})
+	.catch( error => {
+		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		return res.status( 500 ).json({
+			 status : 500,
+			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
+		 });
+	});
+});
+
+app.post("/api/EncuestaC", jsonParser, (req, res, next) =>{
+	let experienica = req.body.experienica;
+	let id = req.body.id;
+
+	VPList.postLealtad(id, experienica)
+	.then( persona =>{
+		return res.status( 201 ).json({
+			message: "Se cambio el valor",
+			status: 201,
+			Persona: persona
+		});
+	})
+	.catch( error => {
+		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		return res.status( 500 ).json({
+			 status : 500,
+			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
+		 });
+	});
+});
+
+
 let server;
 
 function runServer(port, databaseUrl){

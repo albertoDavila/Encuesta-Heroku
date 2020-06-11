@@ -8,7 +8,7 @@ let vicepresidenciaSchema = mongoose.Schema({
 	nombre: { type : String },
 	satisfaccion: { type : Number },
 	lealtad: { type: String },
-	experienica: { type: String }
+	experiencia: { type: String }
 	
 });
 

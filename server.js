@@ -62,7 +62,7 @@ app.use( morgan( "dev" ) );
 // 		});
 // });
 
-app.get( "/api/EncuestasE", ( req, res, next ) => {
+app.get( "/api/EncuestasAn2", ( req, res, next ) => {
 	VPList.get()
 		.then( vicepresidencia => {
 			return res.status( 200 ).json( vicepresidencia );
@@ -104,7 +104,7 @@ app.get( "/api/EncuestasE", ( req, res, next ) => {
 // 		});
 // });
 
-app.post("/api/EncuestaA", jsonParser, (req, res, next) =>{
+app.post("/api/EncuestasAn3", jsonParser, (req, res, next) =>{
 	let satisfaccion = req.body.satisfaccion;
 	let id = req.body.id;
 
@@ -125,7 +125,7 @@ app.post("/api/EncuestaA", jsonParser, (req, res, next) =>{
 	});
 });
 
-app.post("/api/EncuestaB", jsonParser, (req, res, next) =>{
+app.post("/api/EncuestasAn4", jsonParser, (req, res, next) =>{
 	let lealtad = req.body.lealtad;
 	let id = req.body.id;
 
@@ -146,7 +146,7 @@ app.post("/api/EncuestaB", jsonParser, (req, res, next) =>{
 	});
 });
 
-app.post("/api/EncuestaC", jsonParser, (req, res, next) =>{
+app.post("/api/EncuestasAn5", jsonParser, (req, res, next) =>{
 	let experienica = req.body.experienica;
 	let id = req.body.id;
 

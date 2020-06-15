@@ -125,6 +125,27 @@ app.post("/api/EncuestasAn3", jsonParser, (req, res, next) =>{
 	});
 });
 
+app.post("/api/EncuestasAn13", jsonParser, (req, res, next) =>{
+	let satisfaccion = req.body.satisfaccion;
+	let id = req.body.id;
+
+	VPList.postsatisfaccion(id, satisfaccion)
+	.then( persona =>{
+		return res.status( 201 ).json({
+			message: "Se cambio el valor",
+			status: 201,
+			Persona: persona
+		});
+	})
+	.catch( error => {
+		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		return res.status( 500 ).json({
+			 status : 500,
+			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
+		 });
+	});
+});
+
 app.post("/api/EncuestasAn4", jsonParser, (req, res, next) =>{
 	let lealtad = req.body.lealtad;
 	let id = req.body.id;

@@ -86,6 +86,14 @@ let VPList = {
 			}
 		 });
 	 },
+	
+		 postsatisfaccion : function( id, satisfaccion ){
+		 return Vicepresidencia.insertOne({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
+			if (err) {
+				throw Error(error);
+			}
+		 });
+	 },
 
 	 postLealtad : function( id, lealtad ){
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {lealtad: lealtad}, (err) => {

@@ -79,7 +79,7 @@ let VPList = {
 					throw Error( error );
 				});
 	}, 
-		 postSatisfaccion : function( id, tiempoInicio ){
+		 postSatisfaccion : function( id, satisfaccion ){
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
 			if (err) {
 				throw Error(error);
@@ -87,7 +87,7 @@ let VPList = {
 		 });
 	 },
 
-	 postLealtad : function( id, tiempoInicio ){
+	 postLealtad : function( id, lealtad ){
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {lealtad: lealtad}, (err) => {
 			if (err) {
 				throw Error(error);
@@ -95,8 +95,8 @@ let VPList = {
 		 });
 	 },
 
-	 postExperiencia : function( id, tiempoInicio ){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {experienica: experienica}, (err) => {
+	 postExperiencia : function( id, experiencia ){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {experiencia: experiencia}, (err) => {
 			if (err) {
 				throw Error(error);
 			}

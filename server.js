@@ -129,7 +129,7 @@ app.post("/api/EncuestasAn13", jsonParser, (req, res, next) =>{
 	let satisfaccion = req.body.satisfaccion;
 	let id = req.body.id;
 
-	VPList.postsatisfaccion(id, satisfaccion)
+	VPList.PostSatis(id, satisfaccion)
 	.then( persona =>{
 		return res.status( 201 ).json({
 			message: "Se cambio el valor",

@@ -150,7 +150,7 @@ app.post("/api/EncuestasAn5", jsonParser, (req, res, next) =>{
 	let experienica = req.body.experienica;
 	let id = req.body.id;
 
-	VPList.postLealtad(id, experienica)
+	VPList.postExperiencia(id, experienica)
 	.then( persona =>{
 		return res.status( 201 ).json({
 			message: "Se cambio el valor",

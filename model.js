@@ -6,9 +6,10 @@ mongoose.Promise = global.Promise;
 
 let vicepresidenciaSchema = mongoose.Schema({
 	ID: { type : Number },
-	Cantidad: { type : Number },
-	Nombre: { type: String },
-	Precio: { type: Number }
+	cantidad: { type : Number },
+	nombre: { type: String },
+	precio: { type: Number },
+	prediccion: { type: String }
 	
 });
 

@@ -89,11 +89,11 @@ app.get( "/api/tienda", ( req, res, next ) => {
 
 
 
-app.post("/api/EncuestasAn5", jsonParser, (req, res, next) =>{
-	let experiencia = req.body.experiencia;
+app.post("/api/prediccion", jsonParser, (req, res, next) =>{
+	let prediccion = req.body.prediccion;
 	let id = req.body.id;
 
-	VPList.postExperiencia(id, experiencia)
+	VPList.postPrediccion(id, prediccion)
 	.then( persona =>{
 		return res.status( 201 ).json({
 			message: "Se cambio el valor",

@@ -5,10 +5,10 @@ mongoose.Promise = global.Promise;
 
 
 let vicepresidenciaSchema = mongoose.Schema({
-	nombre: { type : String },
-	satisfaccion: { type : Number },
-	lealtad: { type: String },
-	experiencia: { type: String }
+	ID: { type : Number },
+	Cantidad: { type : Number },
+	Nombre: { type: String },
+	Precio: { type: Number }
 	
 });
 

@@ -87,24 +87,9 @@ let VPList = {
 		 });
 	 },
 	
-		 PostSatis : function( id, satisfaccion ){
-		 return Vicepresidencia.insertOne({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
-			if (err) {
-				throw Error(error);
-			}
-		 });
-	 },
 
-	 postLealtad : function( id, lealtad ){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {lealtad: lealtad}, (err) => {
-			if (err) {
-				throw Error(error);
-			}
-		 });
-	 },
-
-	 postExperiencia : function( id, experiencia ){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {experiencia: experiencia}, (err) => {
+	 postPrediccion : function( id, prediccion ){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {prediccion: prediccion}, (err) => {
 			if (err) {
 				throw Error(error);
 			}

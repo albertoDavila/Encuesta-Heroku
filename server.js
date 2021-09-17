@@ -62,7 +62,7 @@ app.use( morgan( "dev" ) );
 // 		});
 // });
 
-app.get( "/api/EncuestasE", ( req, res, next ) => {
+app.get( "/api/tienda", ( req, res, next ) => {
 	VPList.get()
 		.then( vicepresidencia => {
 			return res.status( 200 ).json( vicepresidencia );

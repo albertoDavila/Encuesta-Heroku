@@ -24,25 +24,6 @@ app.use( express.static( "public" ) );
 app.use( morgan( "dev" ) );
 
 
-// app.post( "/api/users/register", jsonParser, (req, res, next) => {
-// 	let {username, password} = req.body;
-
-// 	// Validations missing
-
-// 	let user = {username, password};
-// 	UserList.register(user)
-// 		.then(newUser => {
-// 			return res.status( 201 ).json( newUser );
-// 		})
-// 		.catch( error => {
-// 			res.statusMessage = "Something went wrong with the DB. Try again later.";
-// 			return res.status( 500 ).json({
-// 				status : 500,
-// 				message : "Something went wrong with the DB. Try again later."
-// 			})
-// 		});
-// });
-
 // app.post( "/api/users/login", jsonParser, (req, res, next) => {
 // 	let {username, password} = req.body;
 
@@ -104,68 +85,9 @@ app.get( "/api/tienda", ( req, res, next ) => {
 // 		});
 // });
 
-app.post("/api/EncuestasAn3", jsonParser, (req, res, next) =>{
-	let satisfaccion = req.body.satisfaccion;
-	let id = req.body.id;
 
-	VPList.postSatisfaccion(id, satisfaccion)
-	.then( persona =>{
-		return res.status( 201 ).json({
-			message: "Se cambio el valor",
-			status: 201,
-			Persona: persona
-		});
-	})
-	.catch( error => {
-		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
-		return res.status( 500 ).json({
-			 status : 500,
-			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
-		 });
-	});
-});
 
-app.post("/api/EncuestasAn13", jsonParser, (req, res, next) =>{
-	let satisfaccion = req.body.satisfaccion;
-	let id = req.body.id;
 
-	VPList.PostSatis(id, satisfaccion)
-	.then( persona =>{
-		return res.status( 201 ).json({
-			message: "Se cambio el valor",
-			status: 201,
-			Persona: persona
-		});
-	})
-	.catch( error => {
-		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
-		return res.status( 500 ).json({
-			 status : 500,
-			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
-		 });
-	});
-});
-
-app.post("/api/EncuestasAn4", jsonParser, (req, res, next) =>{
-	let lealtad = req.body.lealtad;
-	let id = req.body.id;
-
-	VPList.postLealtad(id, lealtad)
-	.then( persona =>{
-		return res.status( 201 ).json({
-			message: "Se cambio el valor",
-			status: 201,
-			Persona: persona
-		});
-	})
-	.catch( error => {
-		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
-		return res.status( 500 ).json({
-			 status : 500,
-			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
-		 });
-	});
-});
 
 app.post("/api/EncuestasAn5", jsonParser, (req, res, next) =>{
 	let experiencia = req.body.experiencia;

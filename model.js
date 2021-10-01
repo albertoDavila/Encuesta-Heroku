@@ -80,8 +80,8 @@ let VPList = {
 					throw Error( error );
 				});
 	}, 
-		 postSatisfaccion : function( id, satisfaccion ){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
+	postSatisfaccion : function( id, satisfaccion ){
+		return Vicepresidencia.findOneAndUpdate({nombre: id}, {satisfaccion: satisfaccion}, (err) => {
 			if (err) {
 				throw Error(error);
 			}

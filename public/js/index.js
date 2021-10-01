@@ -1,5 +1,5 @@
 function init(){
-	let url = '/api/inventarios';
+	let url = '/api/tienda';
 	let settings = {
 		method: 'GET'
 	}

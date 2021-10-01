@@ -90,7 +90,7 @@ let VPList = {
 	
 
 	 postPrediccion : function( id, prediccion ){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {prediccion: prediccion}, (err) => {
+		 return Vicepresidencia.findOneAndUpdate({ID: id}, {prediccion: prediccion}, (err) => {
 			if (err) {
 				throw Error(error);
 			}
